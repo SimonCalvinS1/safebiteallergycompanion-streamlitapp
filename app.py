@@ -164,36 +164,7 @@ elif view_option == "Allergen Data Analytics":
         st.plotly_chart(fig2, use_container_width=True)
 
 # ------------------------------------------------------------------------------
-# VIEW 3: ADD NEW RECIPE (MOCK POST CALL)
-# ------------------------------------------------------------------------------
-elif view_option == "Add New Recipe (Mock POST)":
-    st.title("Add Custom Recipe to Dataset")
-    st.caption("Demonstrates dynamic POST requests into session dataset.")
-
-    with st.form("add_recipe_form"):
-        rec_name = st.text_input("Recipe Name")
-        category = st.selectbox("Category", ["Italian", "Asian", "Mexican", "Breakfast", "Vegan", "Dessert"])
-        prep_time = st.number_input("Prep Time (mins)", min_value=1, value=15)
-        calories = st.number_input("Calories (kcal)", min_value=50, value=300)
-        selected_allergens = st.multiselect("Flagged Allergens", options=all_allergens)
-        
-        submitted = st.form_submit_button("Post Recipe to API")
-
-        if submitted and rec_name:
-            new_item = {
-                "name": rec_name,
-                "category": category,
-                "prepTime": prep_time,
-                "calories": calories,
-                "rating": 5.0,
-                "allergens": selected_allergens
-            }
-            res = MockSafeBiteAPI.add_recipe(new_item)
-            st.success(f"Response {res['status']}: {res['message']}")
-            st.rerun()
-
-# ------------------------------------------------------------------------------
-# VIEW 4: FEEDBACK FORM
+# VIEW 3: FEEDBACK FORM
 # ------------------------------------------------------------------------------
 elif view_option == "Feedback & Audit Form":
     st.title("Feedback & Audit Log")
