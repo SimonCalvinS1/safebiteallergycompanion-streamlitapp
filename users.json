@@ -1,0 +1,17 @@
+[
+  {
+    "username": "student",
+    "password": "password123",
+    "name": "Alex Student"
+  },
+  {
+    "username": "admin",
+    "password": "adminpass",
+    "name": "System Administrator"
+  },
+  {
+    "username": "user1",
+    "password": "safeuser1",
+    "name": "Jane Doe"
+  }
+]
