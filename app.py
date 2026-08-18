@@ -98,7 +98,7 @@ if st.sidebar.button("Logout"):
 st.sidebar.markdown("---")
 view_option = st.sidebar.radio(
     "Navigation Views",
-    ["Recipe Explorer & Filter", "Allergen Data Analytics", "Add New Recipe (Mock POST Method)", "Feedback & Audit Form"]
+    ["Recipe Explorer & Filter", "Allergen Data Analytics", "Feedback & Audit Form"]
 )
 
 # Fetch recipe dataset via Mock API Layer
